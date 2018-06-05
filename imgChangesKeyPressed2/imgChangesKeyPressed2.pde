@@ -3,11 +3,12 @@ PImage downImage;
 PImage leftImage;
 PImage rightImage;
 PImage imageShown;
+int gameState = 0;
 
 char arrow;
 
 void setup () {
-  size(1000,760);
+  size(240,320);
   background(0);
   
   // load images 
@@ -15,47 +16,29 @@ void setup () {
   downImage = loadImage("down.png");
   leftImage = loadImage("left.png");
   rightImage = loadImage("right.png");
+
 }
 
 void draw() {
-  // animate images
-  showRandomArrows();
+  
+  switch(gameState) {
+    case 0:
+      showRandomArrows();
+      break;
+    //case 1:
+    //  startGame();
+    //case 2:
+    //  startRunning();      
+    //case 3: 
+    //  gameOver();
+  }
   
   // control images
   //setKey();
 }
 
-void keyPressed() 
-{ 
-  if(key == 'w'){ 
-    println("key w");
-  }
+void startGame() {
   
-  if(key == 's'){ 
-    println("key s");
-  }
-  
-  if(key == 'a'){ 
-    println("key a");
-  }
-  
-  if(key =='d'){ 
-    println("key d");
-  }
-}
-
-void setKey() {
-  
-  char[] keys = new char[4];
-  keys[0] = 'w';  // Assign value to first element in the array
-  keys[1] = 's'; // Assign value to second element in the array
-  keys[2] = 'a';  // Assign value to third element in the arrayint[]
-  keys[3] = 'd';  // Assign value to 4th element in the arrayint[]
-  
-  for (int i = 0; i < keys.length; i++) {
-    key = keys[i];
-    keyPressed();
-  }
   
 }
 
@@ -85,6 +68,7 @@ void showRandomArrows() {
   // render image
   image(imageShown, 0, 0);
   
-  delay(200);
+  // Set a delay
+  delay(2000);
   
 }
