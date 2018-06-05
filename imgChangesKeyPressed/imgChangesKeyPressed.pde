@@ -23,9 +23,21 @@ isLoaded = true;
 if(key=='s'){ 
 d = loadImage("down.png");
 isLoaded = true; 
-
-   }
 }
+if(key=='a'){ 
+d = loadImage("left.png");
+isLoaded = true; 
+}
+if(key=='d'){ 
+d = loadImage("right.png");
+isLoaded = true; 
+}
+}
+//void keyReleased(){
+ //background (0,0,0);
+ 
 void draw() {
+  background (0);
+  
 if(isLoaded)image(d, 0, 0);
 }
